@@ -35,8 +35,10 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 
 <ul>
 <li><a href="data/comparison.csv">comparison.csv</a> — по $n$: $E_2$, хищное правило («low»/«high»), Тода 2003, Тода 1962, семейство, лекция.</li>
-<li><a href="data/e2_metalib.csv">e2_metalib.csv</a> — метабиблиотека по блокам $(n,s,\text{цвет})$: число слов, ранг дифференциала, размерность $E^2$, $n\le64$.</li>
-<li><a href="data/sseq_S3_p3.csv">sseq_S3_p3.csv</a> — нестабильный Ext для $S^3$ при $p=3$ из sseq/ext: строки <code>n,s,dim</code>, $n=t-s$, $n\le86$.</li>
+<li><a href="data/e2_coloured.csv">e2_coloured.csv</a> — $E^2$ по $(n,s,\text{цвет})$, $n\le150$ (цвет $=Q$-вес).</li>
+<li><a href="data/sseq_qweight_S3_p3.csv">sseq_qweight_S3_p3.csv</a> — нестабильный Ext для $S^3$ при $p=3$ по $(n,s,e)$, как его печатает <code>qgrade_dims</code>; строки <code>n,s,e,dim</code>, $n=t-s$.</li>
+<li><a href="data/e2_metalib.csv">e2_metalib.csv</a> — прямой перебор метабиблиотеки по блокам $(n,s,\text{цвет})$: число слов, ранг дифференциала, размерность $E^2$, $n\le64$.</li>
+<li><a href="data/sseq_S3_p3.csv">sseq_S3_p3.csv</a> — тот же Ext из sseq/ext без веса: строки <code>n,s,dim</code>, $n\le150$.</li>
 <li><a href="data/differentials.json">differentials.json</a> — дифференциалы хищного правила (оба заполнения и вариант с $d_5$).</li>
 <li><a href="data/toda2003_S3.csv">toda2003_S3.csv</a> — наше прочтение столбца $S^3$ таблицы Тоды 2003 года.</li>
 </ul>
