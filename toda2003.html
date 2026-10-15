@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Столбец S³ таблицы Тоды 2003 года — Цветная метабиблиотека: пересчёт</title><style>
+<title>Столбец S³ таблицы Тоды 2003 года — Цветная метабиблиотека: пересчёт</title>
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/toda2003.html">
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/toda2003.html">
+<link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/toda2003.html">
+<style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
         --bad:#fde8e4; --badink:#a33a1f; --ok:#e7f4ea; --amb:#fff3d6; --acc:#2e6db4; }
 @media (prefers-color-scheme: dark) { :root { --ink:#e6e9ee; --muted:#a3adb9; --line:#38414c;
@@ -8,10 +12,21 @@
 * { box-sizing: border-box; }
 body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif; }
 header { border-bottom:1px solid var(--line); background:var(--soft); }
-header .wrap { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; align-items:baseline; }
-header .title { font-weight:600; margin-right:1rem; }
-nav a { color:var(--acc); text-decoration:none; white-space:nowrap; }
-nav a.cur { color:var(--ink); font-weight:600; }
+header .wrap { padding-top:.7rem; padding-bottom:.8rem; }
+header .top { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.6rem; }
+header .title { font-weight:600; color:var(--ink); text-decoration:none; }
+header .tools { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.lang { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:.85rem; line-height:1.6; }
+.lang a, .lang strong { padding:0 .6em; text-decoration:none; }
+.lang a { color:var(--acc); background:var(--bg); }
+.lang strong { background:var(--acc); color:var(--bg); }
+.lang > * + * { border-left:1px solid var(--line); }
+nav { display:flex; flex-wrap:wrap; gap:.4rem; }
+nav a { color:var(--acc); text-decoration:none; white-space:nowrap; font-size:.92rem; line-height:1.5;
+        padding:.15em .65em; border:1px solid var(--line); border-radius:6px; background:var(--bg); }
+nav a:hover, nav a:focus-visible { border-color:var(--acc); }
+nav a.cur { background:var(--acc); border-color:var(--acc); color:var(--bg); font-weight:600; }
+@media (max-width:520px) { nav { gap:.3rem; } nav a { font-size:.85rem; padding:.1em .5em; } }
 .wrap { max-width:1100px; margin:0 auto; padding:.9rem 16px; }
 h1 { font-size:1.6rem; margin:.6rem 0 .8rem; } h2 { font-size:1.25rem; margin-top:2rem; }
 a { color:var(--acc); } .muted { color:var(--muted); } small { color:var(--muted); }
@@ -30,7 +45,9 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><span class="title">Цветная метабиблиотека: пересчёт</span><nav><a href="index.html">Сводка</a> <a href="comparison.html">Сравнение по n</a> <a href="e2.html">Классы E²</a> <a href="differentials.html">Дифференциалы</a> <a href="toda2003.html" class=cur>Таблица Тоды 2003</a> <a href="method.html">Метод и проверки</a> <a href="verify.html">Проверяемость</a> <a href="data.html">Данные</a> <a href="notes.html">Заметки об источниках</a> <a href="search.html">Поиск</a></nav></div></header>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/toda2003.html" hreflang="en" lang="en">EN</a></span></div></div>
+<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html" class=cur aria-current=page>Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
 <main class="wrap"><h1>Столбец $S^3$ таблицы Тоды 2003 года</h1>
 
 <p>H. Toda, <i>Unstable 3-primary Homotopy Groups of Spheres</i>, Econoinformatics (Himeji Dokkyo University) <b>29</b> (2003), 1–77
@@ -45,5 +62,5 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <p><a href="data/toda2003_S3.csv">toda2003_S3.csv</a></p>
 </main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
 (02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header nav" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
 </body></html>

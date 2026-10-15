@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verifiability of the disagreement with Toda — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/verify.html">
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/verify.html">
+<link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/verify.html">
+<style>
+:root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
+        --bad:#fde8e4; --badink:#a33a1f; --ok:#e7f4ea; --amb:#fff3d6; --acc:#2e6db4; }
+@media (prefers-color-scheme: dark) { :root { --ink:#e6e9ee; --muted:#a3adb9; --line:#38414c;
+        --bg:#14181d; --soft:#1c2128; --bad:#4a2620; --badink:#ffb4a2; --ok:#1f3a27; --amb:#4a3d1c; --acc:#7fb0ec; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif; }
+header { border-bottom:1px solid var(--line); background:var(--soft); }
+header .wrap { padding-top:.7rem; padding-bottom:.8rem; }
+header .top { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.6rem; }
+header .title { font-weight:600; color:var(--ink); text-decoration:none; }
+header .tools { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.lang { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:.85rem; line-height:1.6; }
+.lang a, .lang strong { padding:0 .6em; text-decoration:none; }
+.lang a { color:var(--acc); background:var(--bg); }
+.lang strong { background:var(--acc); color:var(--bg); }
+.lang > * + * { border-left:1px solid var(--line); }
+nav { display:flex; flex-wrap:wrap; gap:.4rem; }
+nav a { color:var(--acc); text-decoration:none; white-space:nowrap; font-size:.92rem; line-height:1.5;
+        padding:.15em .65em; border:1px solid var(--line); border-radius:6px; background:var(--bg); }
+nav a:hover, nav a:focus-visible { border-color:var(--acc); }
+nav a.cur { background:var(--acc); border-color:var(--acc); color:var(--bg); font-weight:600; }
+@media (max-width:520px) { nav { gap:.3rem; } nav a { font-size:.85rem; padding:.1em .5em; } }
+.wrap { max-width:1100px; margin:0 auto; padding:.9rem 16px; }
+h1 { font-size:1.6rem; margin:.6rem 0 .8rem; } h2 { font-size:1.25rem; margin-top:2rem; }
+a { color:var(--acc); } .muted { color:var(--muted); } small { color:var(--muted); }
+.tw { overflow-x:auto; margin:1rem 0; border:1px solid var(--line); border-radius:6px; }
+table { border-collapse:collapse; width:100%; font-size:.9rem; font-variant-numeric:tabular-nums; }
+th, td { border-bottom:1px solid var(--line); padding:.3rem .55rem; text-align:center; vertical-align:top; }
+th { background:var(--soft); position:sticky; top:0; }
+td.l, th.l { text-align:left; }
+tr.bad td { background:var(--bad); } td.bad { background:var(--bad); color:var(--badink); font-weight:600; }
+td.amb { background:var(--amb); } td.ok { background:var(--ok); }
+.box { border-left:4px solid var(--acc); background:var(--soft); padding:.7rem 1rem; margin:1rem 0; border-radius:0 6px 6px 0; }
+img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; }
+code { background:var(--soft); padding:0 .25em; border-radius:3px; }
+footer { border-top:1px solid var(--line); margin-top:3rem; }
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><a href="../verify.html" hreflang="ru" lang="ru">RU</a><strong lang="en" aria-current="true">EN</strong></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html" class=cur aria-current=page>Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>Verifiability of the disagreement with Toda</h1>
+
+<p>The main conclusion of the comparison is that the rapacious rule leaves more classes than Toda's 2003 table. So that this
+need not rest on trust in our program, for the first five disagreements we made a proof that can be checked independently.</p>
+<div class="box"><p><b>Claim.</b> If the rapacious rule (arrows $d_r\colon(n,s,c)\to(n-1,s+r,c+1)$, $r\ge2$,
+maximal rank on every page) is applied to the actual $E^2$ page of the metalibrary, then over $\pi_n(S^2)$ there remain</p>
+<div class="tw"><table><thead><tr><th>n</th><th>the rule (both filling orders)</th><th>Toda 2003</th></tr></thead><tbody><tr><td>49</td><td>2</td><td>1</td></tr><tr><td>50</td><td>3</td><td>1</td></tr><tr><td>51</td><td>1</td><td>0</td></tr><tr><td>59</td><td>2</td><td>1</td></tr><tr><td>60</td><td>1</td><td>0</td></tr></tbody></table></div>
+<p>Toda's values are quoted, not proved.</p></div>
+
+<h2>How it works</h2>
+<ol>
+<li><b>Locality.</b> The rule draws arrows only between nonzero cells of $E^2$, so it runs separately on each connected
+component of the graph of possible arrows. For the given columns it suffices to know the exact dimensions of the cells of these
+components and that all the neighbouring cells and all the other cells of the columns are zero: 89 cells (100 blocks of the
+differential) for $\pi_{49}$–$\pi_{51}$ and 86 cells (111 blocks, the largest 308,910 × 269,346) for $\pi_{59}$–$\pi_{60}$.</li>
+<li><b>Certificates</b> are written by a program that need not be trusted.
+<ul><li><i>Rank of a block</i> $\ge r$: vectors $y_1,\dots,y_r$ of source words whose $d(y_i)$ have pairwise distinct leading
+terms (the matrix is triangular). Checking it is only computing $d$, with no Gaussian elimination; on average 1.5 words per vector.</li>
+<li><i>A nonzero cell</i> of dimension $h$: $h$ cycles $z$ ($dz=0$) and $h$ cocycles $\varphi$ ($\varphi\circ d=0$) with an
+invertible matrix $\varphi_j(z_i)$.</li>
+<li>Together with the rank bounds this gives the exact dimension of every cell.</li></ul></li>
+<li><b>The checker</b> is written from scratch following §2 of the Ivanov–Mikhailov–Wu paper (relations, $\partial$,
+admissibility, enumeration of words) and does not use the code that computed $E^2$. It checks the certificates and the
+completeness of the set of cells, and runs the rule itself. It rejects a corrupted certificate (tested with four kinds of corruption).</li>
+<li><b>Lean 4</b> is a third independent implementation of the algebra and of the same checks. The theorem on the number of
+surviving classes is proved by computation (<code>native_decide</code>, that is, trusting the Lean compiler); Lean rejects a wrong value.</li>
+</ol>
+
+<h2>Runs</h2>
+<div class="tw"><table><thead><tr><th>columns</th><th>generator</th><th>checker (Python)</th><th>Lean</th></tr></thead><tbody><tr><td>π49–π51</td><td>3 s</td><td>34 s, 1.1 GB</td><td>4.6 min, 1.6 GB</td></tr><tr><td>π59–π60</td><td>72 s</td><td>8 min, 4.3 GB</td><td>3 h 28 min, 7.7 GB</td></tr></tbody></table></div>
+<p>The certificates take 1.5 and 19 MB (compressed).</p>
+
+<h2>What is not covered here</h2>
+<ul>
+<li>Toda's values are not checked.</li>
+<li>That the $E^2$ of this complex is the $E^2$ of the spectral sequence of the paper, and that the formulas of §2 define the
+lambda algebra correctly, is the mathematics of the paper. The checkers verify $d^2=0$ on small cells as a test of the conventions.</li>
+<li>The rule itself is our reading of the lecture (<a href="differentials.html">differentials</a>).</li>
+<li>It is not proved in Lean that the computational checks imply the statements of linear algebra: Lean here is an independent
+program with a theorem about the result of its own run.</li>
+</ul>
+
+<p><b>The code of the generator, the checker and the Lean project, and the certificates themselves, are available on request.</b></p>
+
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/en/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
+</body></html>
