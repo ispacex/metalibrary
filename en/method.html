@@ -1,84 +1,9 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Method and checks — Coloured metalibrary: a recomputation</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/method.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/method.html">
-<link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/method.html">
-<style>
-:root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
-        --bad:#fde8e4; --badink:#a33a1f; --ok:#e7f4ea; --amb:#fff3d6; --acc:#2e6db4; }
-@media (prefers-color-scheme: dark) { :root { --ink:#e6e9ee; --muted:#a3adb9; --line:#38414c;
-        --bg:#14181d; --soft:#1c2128; --bad:#4a2620; --badink:#ffb4a2; --ok:#1f3a27; --amb:#4a3d1c; --acc:#7fb0ec; } }
-* { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif; }
-header { border-bottom:1px solid var(--line); background:var(--soft); }
-header .wrap { padding-top:.7rem; padding-bottom:.8rem; }
-header .top { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.6rem; }
-header .title { font-weight:600; color:var(--ink); text-decoration:none; }
-header .tools { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
-.lang { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:.85rem; line-height:1.6; }
-.lang a, .lang strong { padding:0 .6em; text-decoration:none; }
-.lang a { color:var(--acc); background:var(--bg); }
-.lang strong { background:var(--acc); color:var(--bg); }
-.lang > * + * { border-left:1px solid var(--line); }
-nav { display:flex; flex-wrap:wrap; gap:.4rem; }
-nav a { color:var(--acc); text-decoration:none; white-space:nowrap; font-size:.92rem; line-height:1.5;
-        padding:.15em .65em; border:1px solid var(--line); border-radius:6px; background:var(--bg); }
-nav a:hover, nav a:focus-visible { border-color:var(--acc); }
-nav a.cur { background:var(--acc); border-color:var(--acc); color:var(--bg); font-weight:600; }
-@media (max-width:520px) { nav { gap:.3rem; } nav a { font-size:.85rem; padding:.1em .5em; } }
-.wrap { max-width:1100px; margin:0 auto; padding:.9rem 16px; }
-h1 { font-size:1.6rem; margin:.6rem 0 .8rem; } h2 { font-size:1.25rem; margin-top:2rem; }
-a { color:var(--acc); } .muted { color:var(--muted); } small { color:var(--muted); }
-.tw { overflow-x:auto; margin:1rem 0; border:1px solid var(--line); border-radius:6px; }
-table { border-collapse:collapse; width:100%; font-size:.9rem; font-variant-numeric:tabular-nums; }
-th, td { border-bottom:1px solid var(--line); padding:.3rem .55rem; text-align:center; vertical-align:top; }
-th { background:var(--soft); position:sticky; top:0; }
-td.l, th.l { text-align:left; }
-tr.bad td { background:var(--bad); } td.bad { background:var(--bad); color:var(--badink); font-weight:600; }
-td.amb { background:var(--amb); } td.ok { background:var(--ok); }
-.box { border-left:4px solid var(--acc); background:var(--soft); padding:.7rem 1rem; margin:1rem 0; border-radius:0 6px 6px 0; }
-img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; }
-code { background:var(--soft); padding:0 .25em; border-radius:3px; }
-footer { border-top:1px solid var(--line); margin-top:3rem; }
-</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
- onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><a href="../method.html" hreflang="ru" lang="ru">RU</a><strong lang="en" aria-current="true">EN</strong></span></div></div>
-<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html" class=cur aria-current=page>Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
-<main class="wrap"><h1>Method and checks</h1>
-
-<h2>The lambda algebra</h2>
-<p>The conventions are those of S. O. Ivanov, R. Mikhailov and J. Wu, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a>, §2, at $p=3$:
-$\deg\lambda_i=4i-1$ ($i\ge1$), $\deg\mu_j=4j$ ($j\ge0$),
-$a(k,j)=(-1)^{j+1}\binom{2(k-j)-1}{j}$, $b(k,j)=(-1)^j\binom{2(k-j)}{j}$.
-A word is admissible if the index following $\lambda_i$ is $\le 3i-1$ and the index following $\mu_i$ is $\le 3i$. $\Lambda(1)$ consists of the admissible words with first index $\le1$.</p>
-<p>The paper has $N(k)=k-[\tfrac{k+1}{p}]$. We read the brackets as the ceiling: with the floor, the relation for $k=1$ would contain its own left-hand side. Beyond the ceiling all the binomial coefficients vanish anyway. $N'(k)=k-\lceil k/p\rceil$.</p>
-<p>The differential is a derivation with the Koszul sign, $\partial(xy)=\partial x\cdot y+(-1)^{|x|}x\,\partial y$. Inadmissible products are rewritten in the admissible basis by the relations, recursively.</p>
-<h2>The metalibrary</h2>
-<p>The admissible words in $\lambda_i,\mu_i$ ($i\ge1$) that begin with $\lambda_1$ or $\mu_1$ and end with a $\lambda$. These are the words of $\Lambda(1)$ without $\mu_0$ that end with a $\lambda$. The words containing $\mu_0$ are exactly the words ending in a run of $\mu_0$'s; they form the subcomplex $\Lambda(1)\mu_0$. The words ending in a $\lambda$ form a subcomplex of the quotient $\Lambda(1)/\Lambda(1)\mu_0$; this was checked on every word. The cell of a word: $n-1=2+4\sum(\text{indices})-\#\lambda$; the colour is the number of $\mu$'s.</p>
-<h2>Checks</h2>
-<ul>
-<li>$\partial^2=0$ and $\partial\Lambda(1)\subseteq\Lambda(1)$ on all 2.2 million admissible words up to stem 43.</li>
-<li>$H(\Lambda(1))$ agrees with the unstable $\operatorname{Ext}$ of the sphere $S^3$ at $p=3$ computed by the independent program <a href="https://github.com/JoeyBF/sseq">sseq/ext</a> (<code>resolve_unstable</code>, module <code>S_3[3]</code>) in every cell (stem, $s$) up to stem 43.</li>
-<li>For $n>3$ the homology of the metalibrary equals $H(\Lambda(1))$ cell by cell in $(n,s,\text{colour})$ (up to $n=46$) and equals $\operatorname{Ext}$ from sseq in $(n,s)$ (up to $n=75$). Discarding $\mu_0$ removes only the tower over $\pi_3=\mathbb Z$.</li>
-<li>Two independent implementations of the enumeration, in Python and in Rust, give byte-for-byte the same result up to $n=56$.</li>
-</ul>
-<h2>The colour is the number of Bocksteins</h2>
-<p>For odd $p$ the Steenrod algebra carries an extra grading: the number of $Q$'s in an element $Q(E)P(R)$ of the Milnor basis. All the relations preserve it, and the minimal resolution in sseq is automatically homogeneous with respect to it, so $\operatorname{Ext}$ acquires a third grading $e$ (the $Q$-weight). By degree, the letters correspond as $\lambda_i\leftrightarrow P^i$ (weight 0), $\mu_i\leftrightarrow\beta P^i$ (weight 1).</p>
-<ul>
-<li><b>Colour $=e$</b> in all 281 cells $(n,s,\text{colour})$ with $4\le n\le75$, where the colours are known from a direct computation in the lambda algebra.</li>
-<li>Beyond $\pi_{75}$: in all 180 cells (67 of them nonzero) up to $\pi_{85}$ computed by enumerating the blocks of the metalibrary.</li>
-<li>Therefore the coloured $E^2$ on this site up to $n=150$ is taken from the $Q$-weight (2 s of computation); beyond $\pi_{85}$ the equality “colour $=e$” has not been checked independently, but it fails nowhere it has been checked.</li>
-</ul>
-<p>The $Q$-weight is computed by the example <code>qgrade_dims</code> in the fork <a href="https://github.com/ispacex/sseq/tree/math-54-qgrade">ispacex/sseq</a> (branch <code>math-54-qgrade</code>).</p>
-<h2>Limits</h2>
-<ul><li>The rapacious rule is final up to $n=149$; Toda's 2003 table goes up to $n=82$, so the comparison with it goes up to $n=82$.</li>
-<li>Toda 2003 $\le E_2$ for all $n\le82$.</li></ul>
-<p class="muted">The code is in our working repository; we will send it on request.</p>
-</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
-(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/en/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
-</body></html>
+<title>Moved — Coloured metalibrary: a recomputation</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://ispacex.github.io/metalibrary/method.html">
+<meta http-equiv="refresh" content="0; url=/metalibrary/method.html">
+<script>location.replace("/metalibrary/method.html" + location.search + location.hash)</script>
+</head>
+<body><p>This page has moved to <a href="/metalibrary/method.html">https://ispacex.github.io/metalibrary/method.html</a>.</p></body></html>

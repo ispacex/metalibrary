@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Цветная метабиблиотека для 3-кручения π_n(S²): наш пересчёт — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The coloured metalibrary for the 3-torsion of π_n(S²): our recomputation — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,29 +45,29 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/index.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html" class=cur aria-current=page>Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
-<main class="wrap"><h1>Цветная метабиблиотека для 3-кручения $\pi_n(S^2)$: наш пересчёт</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/index.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html" class=cur aria-current=page>Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>The coloured metalibrary for the 3-torsion of $\pi_n(S^2)$: our recomputation</h1>
 
-<p>Мы попробовали повторить «хищную спектралку» из первой лекции курса «Цветные метабиблиотеки. Разум пространства» (Р. В. Михайлов, 02.09.2016): посчитать лист $E^2$ цветной метабиблиотеки и применить к нему правило «съедать себя как можно быстрее, ограничиваясь только цветом».</p>
-<h2>Что получилось</h2>
+<p>We tried to reproduce the “rapacious spectral sequence” from the first lecture of the course “Coloured metalibraries. The mind of space” (R. Mikhailov, 2 September 2016): to compute the $E^2$ page of the coloured metalibrary and to apply to it the rule “eat yourself as fast as possible, constrained only by colour”.</p>
+<h2>Results</h2>
 <ol>
-<li><b>Лист $E^2$ метабиблиотеки с цветами посчитан до $\pi_{150}$.</b> Цвет оказался числом бокштейнов ($Q$-весом) в нестабильном Ext; это проверено поклеточно прямым счётом лямбда-алгебры до $\pi_{75}$ и выборочно до $\pi_{85}$ (<a href="method.html">метод и проверки</a>).</li>
-<li><b>Цвета сэндвичей и элементов Тоды</b> идут 3 4 4 5 5 6 …, как сказано в лекции (<a href="e2.html">классы</a>).</li>
-<li><b>Хищное правило с цветом $+1$ совпадает с таблицей Тоды при всех $n\le48$</b>, включая $\pi_{44}=0$. Граница ровно на стемах $k<46$ — тех, что Тода определил в 1967 году.</li>
-<li><b>Предсказания из лекции правило воспроизводит:</b> $\pi_{48}=0$, а 3-кручение есть при всех $49\le n\le149$; в $\pi_{71}$ — две копии $\mathbb Z/3$ при одном из порядков поедания (<a href="comparison.html">сравнение</a>).</li>
-<li><b>С таблицей Тоды 2003 года после $\pi_{48}$ правило расходится</b> ($\pi_{49}$, $\pi_{50}$, $\pi_{51}$, $\pi_{59}$, $\pi_{60}$, $\pi_{63}$, $\pi_{64}$, $\pi_{66}$, $\pi_{67}$, $\pi_{68}$, $\pi_{69}$, $\pi_{70}$, $\pi_{73}$, $\pi_{74}$, $\pi_{75}$, $\pi_{76}$, $\pi_{77}$, $\pi_{79}$, $\pi_{80}$), везде оставляя больше классов. У Тоды одна копия в $\pi_{71}$ и нули в $\pi_{51},\pi_{60},\pi_{67},\pi_{75},\pi_{76},\pi_{80}$ (<a href="toda2003.html">наше прочтение</a>). Для $\pi_{49}$–$\pi_{51}$, $\pi_{59}$, $\pi_{60}$ это доказано так, что проверяется без доверия к нашей программе (<a href="verify.html">проверяемость</a>). Почти все лишние классы снимают $d_5$, сохраняющие цвет, но не все разрешённые (<a href="differentials.html">дифференциалы</a>).</li>
-<li><b>Правило не определяет порядок поедания</b>, когда класс может быть и целью, и источником; от этого зависит, например, $\pi_{71}$ (<a href="differentials.html">дифференциалы</a>).</li>
+<li><b>The coloured $E^2$ page of the metalibrary is computed up to $\pi_{150}$.</b> The colour turned out to be the number of Bocksteins (the $Q$-weight) in the unstable Ext; this was checked cell by cell against a direct computation in the lambda algebra up to $\pi_{75}$ and selectively up to $\pi_{85}$ (<a href="method.html">method and checks</a>).</li>
+<li><b>The colours of the sandwiches and the Toda elements</b> run 3 4 4 5 5 6 …, as stated in the lecture (<a href="e2.html">classes</a>).</li>
+<li><b>The rapacious rule with colour $+1$ agrees with Toda's table for all $n\le48$</b>, including $\pi_{44}=0$. The boundary is exactly the stems $k<46$, the ones Toda determined in 1967.</li>
+<li><b>The rule reproduces the predictions of the lecture:</b> $\pi_{48}=0$, and there is 3-torsion for all $49\le n\le149$; in $\pi_{71}$ there are two copies of $\mathbb Z/3$ under one of the orders of eating (<a href="comparison.html">comparison</a>).</li>
+<li><b>Beyond $\pi_{48}$ the rule disagrees with Toda's 2003 table</b> ($\pi_{49}$, $\pi_{50}$, $\pi_{51}$, $\pi_{59}$, $\pi_{60}$, $\pi_{63}$, $\pi_{64}$, $\pi_{66}$, $\pi_{67}$, $\pi_{68}$, $\pi_{69}$, $\pi_{70}$, $\pi_{73}$, $\pi_{74}$, $\pi_{75}$, $\pi_{76}$, $\pi_{77}$, $\pi_{79}$, $\pi_{80}$), leaving more classes in every case. Toda has one copy in $\pi_{71}$ and zeros in $\pi_{51},\pi_{60},\pi_{67},\pi_{75},\pi_{76},\pi_{80}$ (<a href="toda2003.html">our reading</a>). For $\pi_{49}$–$\pi_{51}$, $\pi_{59}$, $\pi_{60}$ this is proved in a way that can be checked without trusting our program (<a href="verify.html">verifiability</a>). Almost all of the extra classes are removed by colour-preserving $d_5$'s, but not by all the allowed ones (<a href="differentials.html">differentials</a>).</li>
+<li><b>The rule does not determine the order of eating</b> when a class can be both a target and a source; $\pi_{71}$, for instance, depends on it (<a href="differentials.html">differentials</a>).</li>
 </ol>
-<h2>Источники</h2>
+<h2>Sources</h2>
 <ul>
-<li>Р. В. Михайлов, лекция 1 курса «Цветные метабиблиотеки. Разум пространства», лаборатория им. П. Л. Чебышева СПбГУ, 02.09.2016: <a href="https://www.youtube.com/watch?v=yE49kR_RA7o">YouTube</a>.</li>
-<li>S. O. Ivanov, R. Mikhailov, J. Wu, <i>On nontriviality of homotopy groups of spheres</i>, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a> — лямбда-алгебра mod $p$.</li>
-<li>H. Toda, <i>Unstable 3-primary Homotopy Groups of Spheres</i>, Econoinformatics 29 (2003) — <a href="https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Toda03-ocr.pdf">скан</a>; H. Toda, <i>Composition Methods in Homotopy Groups of Spheres</i>, 1962.</li>
-<li>Проект sseq, программа ext: <a href="https://github.com/JoeyBF/sseq">github.com/JoeyBF/sseq</a> — независимое вычисление нестабильного Ext.</li>
+<li>R. Mikhailov, lecture 1 of the course <i>Tsvetnye metabiblioteki. Razum prostranstva</i> (Coloured metalibraries. The mind of space), Chebyshev Laboratory, St. Petersburg State University, 2 September 2016, in Russian: <a href="https://www.youtube.com/watch?v=yE49kR_RA7o">YouTube</a>.</li>
+<li>S. O. Ivanov, R. Mikhailov, J. Wu, <i>On nontriviality of homotopy groups of spheres</i>, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a>: the mod-$p$ lambda algebra.</li>
+<li>H. Toda, <i>Unstable 3-primary Homotopy Groups of Spheres</i>, Econoinformatics 29 (2003): <a href="https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Toda03-ocr.pdf">scan</a>; H. Toda, <i>Composition Methods in Homotopy Groups of Spheres</i>, 1962.</li>
+<li>The sseq project, program ext: <a href="https://github.com/JoeyBF/sseq">github.com/JoeyBF/sseq</a>: an independent computation of the unstable Ext.</li>
 </ul>
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>

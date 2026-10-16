@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Проверяемость расхождения с Тодой — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/verify.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/verify.html">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verifiability of the disagreement with Toda — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/verify.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/verify.html">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/verify.html">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,54 +45,54 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/verify.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html" class=cur aria-current=page>Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
-<main class="wrap"><h1>Проверяемость расхождения с Тодой</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/verify.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html" class=cur aria-current=page>Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>Verifiability of the disagreement with Toda</h1>
 
-<p>Главный вывод сравнения — хищное правило оставляет больше классов, чем таблица Тоды 2003 года. Чтобы в этом не пришлось
-верить нашей программе, для пяти первых расхождений мы сделали доказательство, которое проверяется независимо.</p>
-<div class="box"><p><b>Утверждение.</b> Если применить хищное правило (стрелки $d_r\colon(n,s,c)\to(n-1,s+r,c+1)$, $r\ge2$,
-максимальный ранг на каждой странице) к настоящему листу $E^2$ метабиблиотеки, то над $\pi_n(S^2)$ остаётся</p>
-<div class="tw"><table><thead><tr><th>n</th><th>правило (оба порядка заполнения)</th><th>Тода 2003</th></tr></thead><tbody><tr><td>49</td><td>2</td><td>1</td></tr><tr><td>50</td><td>3</td><td>1</td></tr><tr><td>51</td><td>1</td><td>0</td></tr><tr><td>59</td><td>2</td><td>1</td></tr><tr><td>60</td><td>1</td><td>0</td></tr></tbody></table></div>
-<p>Значения Тоды не доказываются, а цитируются.</p></div>
+<p>The main conclusion of the comparison is that the rapacious rule leaves more classes than Toda's 2003 table. So that this
+need not rest on trust in our program, for the first five disagreements we made a proof that can be checked independently.</p>
+<div class="box"><p><b>Claim.</b> If the rapacious rule (arrows $d_r\colon(n,s,c)\to(n-1,s+r,c+1)$, $r\ge2$,
+maximal rank on every page) is applied to the actual $E^2$ page of the metalibrary, then over $\pi_n(S^2)$ there remain</p>
+<div class="tw"><table><thead><tr><th>n</th><th>the rule (both filling orders)</th><th>Toda 2003</th></tr></thead><tbody><tr><td>49</td><td>2</td><td>1</td></tr><tr><td>50</td><td>3</td><td>1</td></tr><tr><td>51</td><td>1</td><td>0</td></tr><tr><td>59</td><td>2</td><td>1</td></tr><tr><td>60</td><td>1</td><td>0</td></tr></tbody></table></div>
+<p>Toda's values are quoted, not proved.</p></div>
 
-<h2>Как устроено</h2>
+<h2>How it works</h2>
 <ol>
-<li><b>Локальность.</b> Правило проводит стрелки только между ненулевыми клетками $E^2$, поэтому идёт отдельно на каждой
-компоненте связности графа возможных стрелок. Для данных столбцов достаточно точных размерностей клеток этих компонент и того,
-что все соседние клетки и все прочие клетки столбцов нулевые: 89 клеток (100 блоков дифференциала) для $\pi_{49}$–$\pi_{51}$
-и 86 клеток (111 блоков, самый большой — 308 910 × 269 346) для $\pi_{59}$–$\pi_{60}$.</li>
-<li><b>Сертификаты</b> пишет программа, которой доверять не нужно.
-<ul><li><i>Ранг блока</i> $\ge r$: векторы $y_1,\dots,y_r$ из слов-источников, у которых $d(y_i)$ имеют попарно разные старшие
-члены (матрица треугольная). Проверка — только вычисление $d$, без исключения Гаусса; в среднем 1,5 слова на вектор.</li>
-<li><i>Ненулевая клетка</i> размерности $h$: $h$ циклов $z$ ($dz=0$) и $h$ коциклов $\varphi$ ($\varphi\circ d=0$) с обратимой
-матрицей $\varphi_j(z_i)$.</li>
-<li>Вместе с оценками рангов это даёт точную размерность каждой клетки.</li></ul></li>
-<li><b>Проверялка</b> написана заново по §2 статьи Иванова–Михайлова–Ву (соотношения, $\partial$, допустимость, перечисление слов)
-и не использует код, которым считался $E^2$. Она проверяет сертификаты, полноту набора клеток и сама прогоняет правило.
-Испорченный сертификат она отвергает (проверено четырьмя видами порчи).</li>
-<li><b>Lean 4</b> — третья независимая реализация алгебры и тех же проверок. Теорема о числе выживших классов доказывается
-вычислением (<code>native_decide</code>, то есть с доверием к компилятору Lean); неверное значение Lean отвергает.</li>
+<li><b>Locality.</b> The rule draws arrows only between nonzero cells of $E^2$, so it runs separately on each connected
+component of the graph of possible arrows. For the given columns it suffices to know the exact dimensions of the cells of these
+components and that all the neighbouring cells and all the other cells of the columns are zero: 89 cells (100 blocks of the
+differential) for $\pi_{49}$–$\pi_{51}$ and 86 cells (111 blocks, the largest 308,910 × 269,346) for $\pi_{59}$–$\pi_{60}$.</li>
+<li><b>Certificates</b> are written by a program that need not be trusted.
+<ul><li><i>Rank of a block</i> $\ge r$: vectors $y_1,\dots,y_r$ of source words whose $d(y_i)$ have pairwise distinct leading
+terms (the matrix is triangular). Checking it is only computing $d$, with no Gaussian elimination; on average 1.5 words per vector.</li>
+<li><i>A nonzero cell</i> of dimension $h$: $h$ cycles $z$ ($dz=0$) and $h$ cocycles $\varphi$ ($\varphi\circ d=0$) with an
+invertible matrix $\varphi_j(z_i)$.</li>
+<li>Together with the rank bounds this gives the exact dimension of every cell.</li></ul></li>
+<li><b>The checker</b> is written from scratch following §2 of the Ivanov–Mikhailov–Wu paper (relations, $\partial$,
+admissibility, enumeration of words) and does not use the code that computed $E^2$. It checks the certificates and the
+completeness of the set of cells, and runs the rule itself. It rejects a corrupted certificate (tested with four kinds of corruption).</li>
+<li><b>Lean 4</b> is a third independent implementation of the algebra and of the same checks. The theorem on the number of
+surviving classes is proved by computation (<code>native_decide</code>, that is, trusting the Lean compiler); Lean rejects a wrong value.</li>
 </ol>
 
-<h2>Прогоны</h2>
-<div class="tw"><table><thead><tr><th>столбцы</th><th>генератор</th><th>проверялка (Python)</th><th>Lean</th></tr></thead><tbody><tr><td>π49–π51</td><td>3 с</td><td>34 с, 1,1 ГБ</td><td>4,6 мин, 1,6 ГБ</td></tr><tr><td>π59–π60</td><td>72 с</td><td>8 мин, 4,3 ГБ</td><td>3 ч 28 мин, 7,7 ГБ</td></tr></tbody></table></div>
-<p>Сертификаты занимают 1,5 и 19 МБ (сжатые).</p>
+<h2>Runs</h2>
+<div class="tw"><table><thead><tr><th>columns</th><th>generator</th><th>checker (Python)</th><th>Lean</th></tr></thead><tbody><tr><td>π49–π51</td><td>3 s</td><td>34 s, 1.1 GB</td><td>4.6 min, 1.6 GB</td></tr><tr><td>π59–π60</td><td>72 s</td><td>8 min, 4.3 GB</td><td>3 h 28 min, 7.7 GB</td></tr></tbody></table></div>
+<p>The certificates take 1.5 and 19 MB (compressed).</p>
 
-<h2>Чего здесь нет</h2>
+<h2>What is not covered here</h2>
 <ul>
-<li>Значения Тоды не проверяются.</li>
-<li>Что $E^2$ этого комплекса — $E^2$ спектральной последовательности из статьи, и что лямбда-алгебра задана формулами §2 верно, —
-математика статьи. Проверялки проверяют $d^2=0$ на малых клетках как тест соглашений.</li>
-<li>Само правило — наше прочтение лекции (<a href="differentials.html">дифференциалы</a>).</li>
-<li>В Lean не доказано, что вычислительные проверки влекут утверждения линейной алгебры: Lean здесь — независимая программа
-с теоремой о результате её работы.</li>
+<li>Toda's values are not checked.</li>
+<li>That the $E^2$ of this complex is the $E^2$ of the spectral sequence of the paper, and that the formulas of §2 define the
+lambda algebra correctly, is the mathematics of the paper. The checkers verify $d^2=0$ on small cells as a test of the conventions.</li>
+<li>The rule itself is our reading of the lecture (<a href="differentials.html">differentials</a>).</li>
+<li>It is not proved in Lean that the computational checks imply the statements of linear algebra: Lean here is an independent
+program with a theorem about the result of its own run.</li>
 </ul>
 
-<p><b>Код генератора, проверялки, Lean-проекта и сами сертификаты доступны по запросу.</b></p>
+<p><b>The code of the generator, the checker and the Lean project, and the certificates themselves, are available on request.</b></p>
 
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small><p><small>Связаться с нами: <a href="https://vissi.su">vissi.su</a></small></p></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small><p><small>Contact: <a href="https://vissi.su">vissi.su</a></small></p></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>
