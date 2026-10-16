@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Заметки об источниках — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/notes.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/notes.html">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes on sources — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/notes.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/notes.html">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/notes.html">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,57 +45,58 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/notes.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html" class=cur aria-current=page>Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
-<main class="wrap"><h1>Заметки об источниках</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/notes.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html">Data</a><a href="notes.html" class=cur aria-current=page>Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>Notes on sources</h1>
 
-<p>Здесь — то, что мы заметили в чужих таблицах и программах, пока сверяли с ними свои данные.
-<b>В отличие от остальных страниц, речь идёт о 2-примарной части</b> гомотопических групп сфер.</p>
+<p>Here is what we noticed in other people's tables and programs while checking our data against them.
+<b>Unlike the other pages, this one is about the 2-primary part</b> of the homotopy groups of spheres.</p>
 
-<h2>Пакет Н. Стрикленда для Mathematica (Toda.m)</h2>
-<p>N. Strickland, пакет о нестабильных гомотопических группах сфер до 19-го стема:
-<a href="https://strickland1.org/toda/">strickland1.org/toda</a> (файлы <code>Toda.m</code>, <code>LambdaAlgebra.m</code>,
-<code>LambdaData.m</code>, <code>TodaChecks.m</code>). Данные в основном из книги Тоды <i>Composition Methods in Homotopy Groups
-of Spheres</i> (1962). Пакет хранит группы $\pi_{n+k}(S^n)$ по модулю нечётного кручения, образующие, порядки и 962 соотношения
-между композициями, надстройкой $E$, инвариантом Хопфа $H$ и умножением Уайтхеда $P$. Его лямбда-алгебра — только mod 2.</p>
-<p>Mathematica у нас нет, поэтому данные пакета мы прочитали собственной программой и прогнали проверки согласованности:
-перенос проверок автора (<code>TodaChecks.m</code>) и свои — на степени, порядки и лямбда-представителей. Независимая mod-2
-лямбда-алгебра полностью совпала с <code>LambdaData.m</code>. Остальное нашлось как ошибки в данных:</p>
+<h2>N. Strickland's Mathematica package (Toda.m)</h2>
+<p>N. Strickland, a package on the unstable homotopy groups of spheres up to the 19th stem:
+<a href="https://strickland1.org/toda/">strickland1.org/toda</a> (files <code>Toda.m</code>, <code>LambdaAlgebra.m</code>,
+<code>LambdaData.m</code>, <code>TodaChecks.m</code>). The data come mainly from Toda's book <i>Composition Methods in Homotopy Groups
+of Spheres</i> (1962). The package stores the groups $\pi_{n+k}(S^n)$ modulo odd torsion, generators, orders and 962 relations
+among compositions, the suspension $E$, the Hopf invariant $H$ and the Whitehead product $P$. Its lambda algebra is mod 2 only.</p>
+<p>We have no Mathematica, so we read the package's data with our own program and ran consistency checks on it:
+a port of the author's checks (<code>TodaChecks.m</code>) and our own, on degrees, orders and lambda representatives. An independent
+mod-2 lambda algebra agreed with <code>LambdaData.m</code> completely. The rest turned up as errors in the data:</p>
 <ol>
-<li><code>Toda.m</code>, строка 1623: правило <code>Sigma[Sigma[sigmasecond]] -&gt; 2 Sigma[sigma[8]]</code> приравнивает элементы разных групп,
-$\pi_{15}(S^8)$ и $\pi_{16}(S^9)$; правило при этом срабатывает.</li>
-<li>Строка 2126: <code>o[Sigma[sigmaprime],eta[15],epsilon[16]] -&gt; Sigma[zetaprime]</code> — справа должно быть $\Sigma^2\zeta'$.
-Это единственное нарушение $E\circ P=0$, которое находят проверки.</li>
-<li>Строки 1947–1960: опечатка в имени функции (<code>AddRelations</code>), из-за неё три соотношения не добавляются.</li>
-<li>Строка 1144: <code>AddOrderRule</code> вызван с четырьмя аргументами вместо пяти, поэтому элемент $w_n$ при нечётном $n$ не получает порядок 2.</li>
-<li>Строка 1450: <code>SetOrder[o[nu[6],kappa[9]],4,"Toda, Theorem 12.7"]</code> — порядок $\nu_6\circ\kappa_9$ равен 2, а не 4
-(см. ниже). Из-за этого пакет даёт $\pi_{23}(S^6)\cong\mathbb Z_4\oplus(\mathbb Z_2)^3$ вместо $(\mathbb Z_2)^4$.</li>
-<li>Строка 1563: <code>SetOrder[o[omega[17],nu[32]],2,...]</code> — опечатка, должно быть <code>nu[33]</code>; порядок
-$\omega_{17}\circ\nu_{33}$ поэтому не задан, и в $\pi_{36}(S^{17})$ появляется лишнее слагаемое $\mathbb Z$.</li>
-<li>Не задан порядок $\nu_7\circ\kappa_{10}$ (он равен 2: $\pi_{24}(S^7)\cong(\mathbb Z_2)^4$, Тода, теорема 12.7), отсюда
-лишнее $\mathbb Z$ в $\pi_{24}(S^7)$.</li>
-<li>Мелкие ошибки в примерах документации <code>toda.pdf</code>.</li>
+<li><code>Toda.m</code>, line 1623: the rule <code>Sigma[Sigma[sigmasecond]] -&gt; 2 Sigma[sigma[8]]</code> equates elements of different groups,
+$\pi_{15}(S^8)$ and $\pi_{16}(S^9)$; and the rule does fire.</li>
+<li>Line 2126: <code>o[Sigma[sigmaprime],eta[15],epsilon[16]] -&gt; Sigma[zetaprime]</code>: the right-hand side should be $\Sigma^2\zeta'$.
+This is the only violation of $E\circ P=0$ that the checks find.</li>
+<li>Lines 1947–1960: a typo in a function name (<code>AddRelations</code>), because of which three relations are not added.</li>
+<li>Line 1144: <code>AddOrderRule</code> is called with four arguments instead of five, so the element $w_n$ for odd $n$ does not get order 2.</li>
+<li>Line 1450: <code>SetOrder[o[nu[6],kappa[9]],4,"Toda, Theorem 12.7"]</code>: the order of $\nu_6\circ\kappa_9$ is 2, not 4
+(see below). Because of this the package gives $\pi_{23}(S^6)\cong\mathbb Z_4\oplus(\mathbb Z_2)^3$ instead of $(\mathbb Z_2)^4$.</li>
+<li>Line 1563: <code>SetOrder[o[omega[17],nu[32]],2,...]</code>: a typo, it should be <code>nu[33]</code>; so the order of
+$\omega_{17}\circ\nu_{33}$ is not set, and a spurious summand $\mathbb Z$ appears in $\pi_{36}(S^{17})$.</li>
+<li>The order of $\nu_7\circ\kappa_{10}$ is not set (it is 2: $\pi_{24}(S^7)\cong(\mathbb Z_2)^4$, Toda, Theorem 12.7), hence
+a spurious $\mathbb Z$ in $\pi_{24}(S^7)$.</li>
+<li>Minor errors in the examples of the documentation <code>toda.pdf</code>.</li>
 </ol>
-<p>Помимо этого, проверки показывают пробелы — образы $E$, $H$, $P$ в 33, 14 и 29 группах не сводятся к образующим.
-Автор сам предупреждает о такой неполноте на странице пакета, противоречий за ней не найдено.</p>
+<p>Besides these, the checks show gaps: the images under $E$, $H$, $P$ in 33, 14 and 29 groups respectively do not reduce to
+generators. The author himself warns of such incompleteness on the package's page; no contradictions were found behind it.</p>
 
-<h2>$\pi_{23}(S^6)\cong(\mathbb Z_2)^4$: порядок $\nu_6\kappa_9$ равен 2</h2>
-<p>Сверка групп пакета с таблицей Тоды в перепечатке Равенела (<i>Complex Cobordism</i>, 3-е изд., табл. A3.4, с. 390) дала 377
-совпадений из 380 клеток ($2\le n\le21$, $k\le19$). Все три расхождения — ошибки пакета (пп. 5–7 выше). Про $\pi_{23}(S^6)$:</p>
+<h2>$\pi_{23}(S^6)\cong(\mathbb Z_2)^4$: the order of $\nu_6\kappa_9$ is 2</h2>
+<p>Comparing the package's groups with Toda's table as reprinted by Ravenel (<i>Complex Cobordism and Stable Homotopy Groups of
+Spheres</i>, 3rd ed., Table A3.4, p. 390) gave 377 matches out of 380 cells ($2\le n\le21$, $k\le19$). All three discrepancies
+are errors of the package (items 5–7 above). On $\pi_{23}(S^6)$:</p>
 <ul>
-<li>таблица Тоды у Равенела и копия в <a href="https://math.pku.edu.cn/teachers/zhaoxa/_web_resource/_math_table/sphere_homotopy.htm">таблице PKU</a>: $(\mathbb Z_2)^4$ (обе — перепечатки книги Тоды);</li>
-<li>Miyauchi, Mukai, Ohara, <a href="https://arxiv.org/abs/1705.00273">arXiv:1705.00273</a>, §3, берут продолжение $\nu_6\kappa_9$ на пространство Мура $M^{24}$ — оно существует только при $2\nu_6\kappa_9=0$;</li>
-<li><a href="https://arxiv.org/abs/2107.00154">arXiv:2107.00154</a>, доказательство предл. 3.4: $\{P(E\theta)+\nu_6\kappa_9,\ \eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^2$; так как $P(E\theta)$ порядка 2 (это есть и в самом пакете, строка 1438), $2\nu_6\kappa_9=0$;</li>
-<li>то же из соотношений: $2\kappa_7=\bar\nu_7\nu_{15}^2$ и $\nu_6\bar\nu_9=P(\nu_{13}^2)$ дают $2\nu_6\kappa_9=P(\nu_{13}^4)=0$, так как $\pi^s_{12}=0$ (наш вывод).</li>
+<li>Toda's table in Ravenel and its copy in the <a href="https://math.pku.edu.cn/teachers/zhaoxa/_web_resource/_math_table/sphere_homotopy.htm">PKU table</a>: $(\mathbb Z_2)^4$ (both are reprints of Toda's book);</li>
+<li>Miyauchi, Mukai, Ohara, <a href="https://arxiv.org/abs/1705.00273">arXiv:1705.00273</a>, §3, take an extension of $\nu_6\kappa_9$ to the Moore space $M^{24}$, which exists only if $2\nu_6\kappa_9=0$;</li>
+<li><a href="https://arxiv.org/abs/2107.00154">arXiv:2107.00154</a>, proof of Prop. 3.4: $\{P(E\theta)+\nu_6\kappa_9,\ \eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^2$; since $P(E\theta)$ has order 2 (the package itself has this too, line 1438), $2\nu_6\kappa_9=0$;</li>
+<li>the same from the relations: $2\kappa_7=\bar\nu_7\nu_{15}^2$ and $\nu_6\bar\nu_9=P(\nu_{13}^2)$ give $2\nu_6\kappa_9=P(\nu_{13}^4)=0$, since $\pi^s_{12}=0$ (our derivation).</li>
 </ul>
-<p>Прямо это сказано у Y. Hirato, H. Kachi, J. Mukai, <i>21-st and 22-nd homotopy groups of the n-th rotation group</i>,
-J. Fac. Sci. Shinshu Univ. 41 (2006), с. 12 (<a href="https://soar-ir.repo.nii.ac.jp/records/12005">открытый доступ</a>):
-$\pi^6_{23}=\{P(\Sigma\theta),\nu_6\kappa_9,\bar\mu_6,\eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^4$. Порядок 4 есть у соседнего
-$\nu_5\kappa_8$ (там же, с. 11: $2\nu_5\kappa_8\ne0$), видимо, отсюда и ошибка. Текст самой теоремы 12.7 книги Тоды в открытом
-доступе мы не нашли.</p>
+<p>This is stated explicitly by Y. Hirato, H. Kachi, J. Mukai, <i>21-st and 22-nd homotopy groups of the n-th rotation group</i>,
+J. Fac. Sci. Shinshu Univ. 41 (2006), p. 12 (<a href="https://soar-ir.repo.nii.ac.jp/records/12005">open access</a>):
+$\pi^6_{23}=\{P(\Sigma\theta),\nu_6\kappa_9,\bar\mu_6,\eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^4$. It is the neighbouring
+$\nu_5\kappa_8$ that has order 4 (ibid., p. 11: $2\nu_5\kappa_8\ne0$), which is probably where the error comes from. We have not
+found the text of Theorem 12.7 of Toda's book itself in open access.</p>
 
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>

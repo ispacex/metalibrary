@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Поиск по сайту — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/search.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/search.html">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site search — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/search.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/search.html">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/search.html">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,22 +45,23 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/search.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html" class=cur aria-current=page>Поиск</a></nav></div></header>
-<main class="wrap"><h1>Поиск по сайту</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/search.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html" class=cur aria-current=page>Search</a></nav></div></header>
+<main class="wrap"><h1>Site search</h1>
 
-<p><input type="search" id="q" placeholder="например: 71, хищное правило, d5, Стрикленд" autocomplete="off" spellcheck="false"
+<p><input type="search" id="q" placeholder="for example: 71, rapacious rule, d5, Strickland" autocomplete="off" spellcheck="false"
  style="padding:.45em .6em;width:100%;max-width:32em;font-size:1em"></p>
 <p id="status"></p>
 <ul id="results" style="list-style:none;padding:0"></ul>
-<p><small>Ищет по тексту всех страниц, включая строки таблиц. Несколько слов — найдутся места, где есть все они.
-Регистр и «ё» не важны. Группу $\pi_{71}$ ищите по номеру: «71» (найдутся и строки таблиц, и текст).
-Поиск — движок сайта <a href="https://ispacex.github.io/search/">ispacex.github.io</a>; ⌘K / Ctrl-K на любой странице открывает переход по разделам.</small></p>
+<p><small>Searches the text of every page, table rows included. Several words find the places that contain all of them.
+Case does not matter. Look for the group $\pi_{71}$ by its number: “71” (finds both table rows and text).
+This page searches the English pages; <a href="ru/search.html" hreflang="ru">the Russian search</a> searches the Russian ones.
+The search is the engine of <a href="https://ispacex.github.io/en/search/">ispacex.github.io</a>; ⌘K / Ctrl-K on any page opens the jump to a section.</small></p>
 <style>#results li{margin:0 0 1.1em} #results .where{font-size:.85em;color:var(--muted)} #results mark{background:rgba(255,200,80,.35);color:inherit}</style>
 <script src="/sitesearch/search.js"></script>
 <script>SiteSearch.mount({input: 'q', status: 'status', results: 'results', sources: [{ url: '/metalibrary/search-index.json' }]});</script>
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>

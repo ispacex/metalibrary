@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Метод и проверки — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/method.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/method.html">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method and checks — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/method.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/method.html">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/method.html">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,40 +45,40 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/method.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html" class=cur aria-current=page>Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
-<main class="wrap"><h1>Метод и проверки</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/method.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html" class=cur aria-current=page>Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html">Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>Method and checks</h1>
 
-<h2>Лямбда-алгебра</h2>
-<p>Соглашения — как у С. О. Иванова, Р. В. Михайлова и Дж. Ву, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a>, §2, при $p=3$:
+<h2>The lambda algebra</h2>
+<p>The conventions are those of S. O. Ivanov, R. Mikhailov and J. Wu, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a>, §2, at $p=3$:
 $\deg\lambda_i=4i-1$ ($i\ge1$), $\deg\mu_j=4j$ ($j\ge0$),
 $a(k,j)=(-1)^{j+1}\binom{2(k-j)-1}{j}$, $b(k,j)=(-1)^j\binom{2(k-j)}{j}$.
-Слово допустимо, если после $\lambda_i$ следующий индекс $\le 3i-1$, а после $\mu_i$ — $\le 3i$. $\Lambda(1)$ — допустимые слова с первым индексом $\le1$.</p>
-<p>В статье $N(k)=k-[\tfrac{k+1}{p}]$. Скобки мы читаем как потолок: с полом соотношение при $k=1$ содержало бы собственную левую часть. Дальше потолка все биномы и так нулевые. $N'(k)=k-\lceil k/p\rceil$.</p>
-<p>Дифференциал — дифференцирование со знаком Кошуля, $\partial(xy)=\partial x\cdot y+(-1)^{|x|}x\,\partial y$. Недопустимые произведения переписываются по соотношениям в допустимый базис, рекурсивно.</p>
-<h2>Метабиблиотека</h2>
-<p>Слова в $\lambda_i,\mu_i$ ($i\ge1$), которые начинаются с $\lambda_1$ или $\mu_1$, кончаются на $\lambda$ и допустимы. Это слова $\Lambda(1)$ без $\mu_0$, кончающиеся на $\lambda$. Слова с $\mu_0$ — это ровно слова, кончающиеся серией $\mu_0$; они образуют подкомплекс $\Lambda(1)\mu_0$. Слова на $\lambda$ образуют подкомплекс фактора $\Lambda(1)/\Lambda(1)\mu_0$ — это проверено на каждом слове. Клетка слова: $n-1=2+4\sum(\text{индексы})-\#\lambda$; цвет — число $\mu$.</p>
-<h2>Проверки</h2>
+A word is admissible if the index following $\lambda_i$ is $\le 3i-1$ and the index following $\mu_i$ is $\le 3i$. $\Lambda(1)$ consists of the admissible words with first index $\le1$.</p>
+<p>The paper has $N(k)=k-[\tfrac{k+1}{p}]$. We read the brackets as the ceiling: with the floor, the relation for $k=1$ would contain its own left-hand side. Beyond the ceiling all the binomial coefficients vanish anyway. $N'(k)=k-\lceil k/p\rceil$.</p>
+<p>The differential is a derivation with the Koszul sign, $\partial(xy)=\partial x\cdot y+(-1)^{|x|}x\,\partial y$. Inadmissible products are rewritten in the admissible basis by the relations, recursively.</p>
+<h2>The metalibrary</h2>
+<p>The admissible words in $\lambda_i,\mu_i$ ($i\ge1$) that begin with $\lambda_1$ or $\mu_1$ and end with a $\lambda$. These are the words of $\Lambda(1)$ without $\mu_0$ that end with a $\lambda$. The words containing $\mu_0$ are exactly the words ending in a run of $\mu_0$'s; they form the subcomplex $\Lambda(1)\mu_0$. The words ending in a $\lambda$ form a subcomplex of the quotient $\Lambda(1)/\Lambda(1)\mu_0$; this was checked on every word. The cell of a word: $n-1=2+4\sum(\text{indices})-\#\lambda$; the colour is the number of $\mu$'s.</p>
+<h2>Checks</h2>
 <ul>
-<li>$\partial^2=0$ и $\partial\Lambda(1)\subseteq\Lambda(1)$ на всех 2,2 млн допустимых словах до стема 43.</li>
-<li>$H(\Lambda(1))$ совпадает с нестабильным $\operatorname{Ext}$ сферы $S^3$ при $p=3$ из независимой программы <a href="https://github.com/JoeyBF/sseq">sseq/ext</a> (<code>resolve_unstable</code>, модуль <code>S_3[3]</code>) в каждой клетке (стем, $s$) до стема 43.</li>
-<li>Гомологии метабиблиотеки при $n>3$ равны $H(\Lambda(1))$ поклеточно по $(n,s,\text{цвет})$ (до $n=46$) и равны $\operatorname{Ext}$ из sseq по $(n,s)$ (до $n=75$). Выбрасывание $\mu_0$ убирает только башню над $\pi_3=\mathbb Z$.</li>
-<li>Две независимые реализации перебора — на Python и на Rust — дают побайтно один и тот же результат до $n=56$.</li>
+<li>$\partial^2=0$ and $\partial\Lambda(1)\subseteq\Lambda(1)$ on all 2.2 million admissible words up to stem 43.</li>
+<li>$H(\Lambda(1))$ agrees with the unstable $\operatorname{Ext}$ of the sphere $S^3$ at $p=3$ computed by the independent program <a href="https://github.com/JoeyBF/sseq">sseq/ext</a> (<code>resolve_unstable</code>, module <code>S_3[3]</code>) in every cell (stem, $s$) up to stem 43.</li>
+<li>For $n>3$ the homology of the metalibrary equals $H(\Lambda(1))$ cell by cell in $(n,s,\text{colour})$ (up to $n=46$) and equals $\operatorname{Ext}$ from sseq in $(n,s)$ (up to $n=75$). Discarding $\mu_0$ removes only the tower over $\pi_3=\mathbb Z$.</li>
+<li>Two independent implementations of the enumeration, in Python and in Rust, give byte-for-byte the same result up to $n=56$.</li>
 </ul>
-<h2>Цвет — это число бокштейнов</h2>
-<p>У алгебры Стинрода при нечётном $p$ есть дополнительная градуировка: число $Q$ в элементе $Q(E)P(R)$ базиса Милнора. Её сохраняют все соотношения, а минимальная резольвента в sseq автоматически однородна по ней, поэтому $\operatorname{Ext}$ получает третью градуировку $e$ ($Q$-вес). По степеням буквы отвечают: $\lambda_i\leftrightarrow P^i$ (вес 0), $\mu_i\leftrightarrow\beta P^i$ (вес 1).</p>
+<h2>The colour is the number of Bocksteins</h2>
+<p>For odd $p$ the Steenrod algebra carries an extra grading: the number of $Q$'s in an element $Q(E)P(R)$ of the Milnor basis. All the relations preserve it, and the minimal resolution in sseq is automatically homogeneous with respect to it, so $\operatorname{Ext}$ acquires a third grading $e$ (the $Q$-weight). By degree, the letters correspond as $\lambda_i\leftrightarrow P^i$ (weight 0), $\mu_i\leftrightarrow\beta P^i$ (weight 1).</p>
 <ul>
-<li><b>Цвет $=e$</b> во всех 281 клетке $(n,s,\text{цвет})$ при $4\le n\le75$, где цвета известны из прямого счёта лямбда-алгебры.</li>
-<li>За $\pi_{75}$ — во всех 180 клетках (67 ненулевых) до $\pi_{85}$, посчитанных перебором блоков метабиблиотеки.</li>
-<li>Поэтому $E^2$ с цветами на этом сайте до $n=150$ взят из $Q$-веса (2 с счёта); за $\pi_{85}$ равенство «цвет $=e$» не проверено независимо, но не нарушено нигде, где проверено.</li>
+<li><b>Colour $=e$</b> in all 281 cells $(n,s,\text{colour})$ with $4\le n\le75$, where the colours are known from a direct computation in the lambda algebra.</li>
+<li>Beyond $\pi_{75}$: in all 180 cells (67 of them nonzero) up to $\pi_{85}$ computed by enumerating the blocks of the metalibrary.</li>
+<li>Therefore the coloured $E^2$ on this site up to $n=150$ is taken from the $Q$-weight (2 s of computation); beyond $\pi_{85}$ the equality “colour $=e$” has not been checked independently, but it fails nowhere it has been checked.</li>
 </ul>
-<p>Вычисление $Q$-веса — пример <code>qgrade_dims</code> в форке <a href="https://github.com/ispacex/sseq/tree/math-54-qgrade">ispacex/sseq</a> (ветка <code>math-54-qgrade</code>).</p>
-<h2>Границы</h2>
-<ul><li>Хищное правило окончательно до $n=149$; таблица Тоды 2003 года — до $n=82$, так что сравнение с ней — до $n=82$.</li>
-<li>Тода 2003 $\le E_2$ во всех $n\le82$.</li></ul>
-<p class="muted">Код — в рабочем репозитории; пришлём по запросу.</p>
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+<p>The $Q$-weight is computed by the example <code>qgrade_dims</code> in the fork <a href="https://github.com/ispacex/sseq/tree/math-54-qgrade">ispacex/sseq</a> (branch <code>math-54-qgrade</code>).</p>
+<h2>Limits</h2>
+<ul><li>The rapacious rule is final up to $n=149$; Toda's 2003 table goes up to $n=82$, so the comparison with it goes up to $n=82$.</li>
+<li>Toda 2003 $\le E_2$ for all $n\le82$.</li></ul>
+<p class="muted">The code is in our working repository; we will send it on request.</p>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>

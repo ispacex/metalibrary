@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Данные — Цветная метабиблиотека: пересчёт</title>
-<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/data.html">
-<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/en/data.html">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data — Coloured metalibrary: a recomputation</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/data.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/data.html">
 <link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/data.html">
 <style>
 :root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
@@ -45,21 +45,21 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
-<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
-<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><strong lang="ru" aria-current="true">RU</strong><a href="en/data.html" hreflang="en" lang="en">EN</a></span></div></div>
-<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html" class=cur aria-current=page>Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
-<main class="wrap"><h1>Данные</h1>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Coloured metalibrary: a recomputation</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Language"><strong lang="en" aria-current="true">EN</strong><a href="ru/data.html" hreflang="ru" lang="ru">RU</a></span></div></div>
+<nav aria-label="Sections"><a href="index.html">Summary</a><a href="comparison.html">Comparison by n</a><a href="e2.html">E² classes</a><a href="differentials.html">Differentials</a><a href="toda2003.html">Toda's 2003 table</a><a href="method.html">Method and checks</a><a href="verify.html">Verifiability</a><a href="data.html" class=cur aria-current=page>Data</a><a href="notes.html">Notes on sources</a><a href="search.html">Search</a></nav></div></header>
+<main class="wrap"><h1>Data</h1>
 
 <ul>
-<li><a href="data/comparison.csv">comparison.csv</a> — по $n$: $E_2$, хищное правило («low»/«high»), Тода 2003, Тода 1962, семейство, лекция.</li>
-<li><a href="data/e2_coloured.csv">e2_coloured.csv</a> — $E^2$ по $(n,s,\text{цвет})$, $n\le150$ (цвет $=Q$-вес).</li>
-<li><a href="data/sseq_qweight_S3_p3.csv">sseq_qweight_S3_p3.csv</a> — нестабильный Ext для $S^3$ при $p=3$ по $(n,s,e)$, как его печатает <code>qgrade_dims</code>; строки <code>n,s,e,dim</code>, $n=t-s$.</li>
-<li><a href="data/e2_metalib.csv">e2_metalib.csv</a> — прямой перебор метабиблиотеки по блокам $(n,s,\text{цвет})$: число слов, ранг дифференциала, размерность $E^2$, $n\le64$.</li>
-<li><a href="data/sseq_S3_p3.csv">sseq_S3_p3.csv</a> — тот же Ext из sseq/ext без веса: строки <code>n,s,dim</code>, $n\le150$.</li>
-<li><a href="data/differentials.json">differentials.json</a> — дифференциалы хищного правила (оба заполнения и вариант с $d_5$).</li>
-<li><a href="data/toda2003_S3.csv">toda2003_S3.csv</a> — наше прочтение столбца $S^3$ таблицы Тоды 2003 года.</li>
+<li><a href="data/comparison.csv">comparison.csv</a>: by $n$, $E_2$, the rapacious rule (“low”/“high”), Toda 2003, Toda 1962, family, lecture (the last two columns are in Russian).</li>
+<li><a href="data/e2_coloured.csv">e2_coloured.csv</a>: $E^2$ by $(n,s,\text{colour})$, $n\le150$ (colour $=Q$-weight).</li>
+<li><a href="data/sseq_qweight_S3_p3.csv">sseq_qweight_S3_p3.csv</a>: the unstable Ext for $S^3$ at $p=3$ by $(n,s,e)$, as printed by <code>qgrade_dims</code>; rows <code>n,s,e,dim</code>, $n=t-s$.</li>
+<li><a href="data/e2_metalib.csv">e2_metalib.csv</a>: direct enumeration of the metalibrary by blocks $(n,s,\text{colour})$: the number of words, the rank of the differential, the dimension of $E^2$, $n\le64$.</li>
+<li><a href="data/sseq_S3_p3.csv">sseq_S3_p3.csv</a>: the same Ext from sseq/ext without the weight; rows <code>n,s,dim</code>, $n\le150$.</li>
+<li><a href="data/differentials.json">differentials.json</a>: the differentials of the rapacious rule (both fillings and the variant with $d_5$).</li>
+<li><a href="data/toda2003_S3.csv">toda2003_S3.csv</a>: our reading of the $S^3$ column of Toda's 2003 table (the source column is in Russian).</li>
 </ul>
-</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
-<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Where to? for example: rapacious rule, Toda, method" defer></script>
 </body></html>

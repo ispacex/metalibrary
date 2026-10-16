@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цветная метабиблиотека для 3-кручения π_n(S²): наш пересчёт — Цветная метабиблиотека: пересчёт</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/">
+<link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/">
+<style>
+:root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
+        --bad:#fde8e4; --badink:#a33a1f; --ok:#e7f4ea; --amb:#fff3d6; --acc:#2e6db4; }
+@media (prefers-color-scheme: dark) { :root { --ink:#e6e9ee; --muted:#a3adb9; --line:#38414c;
+        --bg:#14181d; --soft:#1c2128; --bad:#4a2620; --badink:#ffb4a2; --ok:#1f3a27; --amb:#4a3d1c; --acc:#7fb0ec; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif; }
+header { border-bottom:1px solid var(--line); background:var(--soft); }
+header .wrap { padding-top:.7rem; padding-bottom:.8rem; }
+header .top { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.6rem; }
+header .title { font-weight:600; color:var(--ink); text-decoration:none; }
+header .tools { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.lang { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:.85rem; line-height:1.6; }
+.lang a, .lang strong { padding:0 .6em; text-decoration:none; }
+.lang a { color:var(--acc); background:var(--bg); }
+.lang strong { background:var(--acc); color:var(--bg); }
+.lang > * + * { border-left:1px solid var(--line); }
+nav { display:flex; flex-wrap:wrap; gap:.4rem; }
+nav a { color:var(--acc); text-decoration:none; white-space:nowrap; font-size:.92rem; line-height:1.5;
+        padding:.15em .65em; border:1px solid var(--line); border-radius:6px; background:var(--bg); }
+nav a:hover, nav a:focus-visible { border-color:var(--acc); }
+nav a.cur { background:var(--acc); border-color:var(--acc); color:var(--bg); font-weight:600; }
+@media (max-width:520px) { nav { gap:.3rem; } nav a { font-size:.85rem; padding:.1em .5em; } }
+.wrap { max-width:1100px; margin:0 auto; padding:.9rem 16px; }
+h1 { font-size:1.6rem; margin:.6rem 0 .8rem; } h2 { font-size:1.25rem; margin-top:2rem; }
+a { color:var(--acc); } .muted { color:var(--muted); } small { color:var(--muted); }
+.tw { overflow-x:auto; margin:1rem 0; border:1px solid var(--line); border-radius:6px; }
+table { border-collapse:collapse; width:100%; font-size:.9rem; font-variant-numeric:tabular-nums; }
+th, td { border-bottom:1px solid var(--line); padding:.3rem .55rem; text-align:center; vertical-align:top; }
+th { background:var(--soft); position:sticky; top:0; }
+td.l, th.l { text-align:left; }
+tr.bad td { background:var(--bad); } td.bad { background:var(--bad); color:var(--badink); font-weight:600; }
+td.amb { background:var(--amb); } td.ok { background:var(--ok); }
+.box { border-left:4px solid var(--acc); background:var(--soft); padding:.7rem 1rem; margin:1rem 0; border-radius:0 6px 6px 0; }
+img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; }
+code { background:var(--soft); padding:0 .25em; border-radius:3px; }
+footer { border-top:1px solid var(--line); margin-top:3rem; }
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><a href="../index.html" hreflang="en" lang="en">EN</a><strong lang="ru" aria-current="true">RU</strong></span></div></div>
+<nav aria-label="Разделы"><a href="index.html" class=cur aria-current=page>Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html">Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
+<main class="wrap"><h1>Цветная метабиблиотека для 3-кручения $\pi_n(S^2)$: наш пересчёт</h1>
+
+<p>Мы попробовали повторить «хищную спектралку» из первой лекции курса «Цветные метабиблиотеки. Разум пространства» (Р. В. Михайлов, 02.09.2016): посчитать лист $E^2$ цветной метабиблиотеки и применить к нему правило «съедать себя как можно быстрее, ограничиваясь только цветом».</p>
+<h2>Что получилось</h2>
+<ol>
+<li><b>Лист $E^2$ метабиблиотеки с цветами посчитан до $\pi_{150}$.</b> Цвет оказался числом бокштейнов ($Q$-весом) в нестабильном Ext; это проверено поклеточно прямым счётом лямбда-алгебры до $\pi_{75}$ и выборочно до $\pi_{85}$ (<a href="method.html">метод и проверки</a>).</li>
+<li><b>Цвета сэндвичей и элементов Тоды</b> идут 3 4 4 5 5 6 …, как сказано в лекции (<a href="e2.html">классы</a>).</li>
+<li><b>Хищное правило с цветом $+1$ совпадает с таблицей Тоды при всех $n\le48$</b>, включая $\pi_{44}=0$. Граница ровно на стемах $k<46$ — тех, что Тода определил в 1967 году.</li>
+<li><b>Предсказания из лекции правило воспроизводит:</b> $\pi_{48}=0$, а 3-кручение есть при всех $49\le n\le149$; в $\pi_{71}$ — две копии $\mathbb Z/3$ при одном из порядков поедания (<a href="comparison.html">сравнение</a>).</li>
+<li><b>С таблицей Тоды 2003 года после $\pi_{48}$ правило расходится</b> ($\pi_{49}$, $\pi_{50}$, $\pi_{51}$, $\pi_{59}$, $\pi_{60}$, $\pi_{63}$, $\pi_{64}$, $\pi_{66}$, $\pi_{67}$, $\pi_{68}$, $\pi_{69}$, $\pi_{70}$, $\pi_{73}$, $\pi_{74}$, $\pi_{75}$, $\pi_{76}$, $\pi_{77}$, $\pi_{79}$, $\pi_{80}$), везде оставляя больше классов. У Тоды одна копия в $\pi_{71}$ и нули в $\pi_{51},\pi_{60},\pi_{67},\pi_{75},\pi_{76},\pi_{80}$ (<a href="toda2003.html">наше прочтение</a>). Для $\pi_{49}$–$\pi_{51}$, $\pi_{59}$, $\pi_{60}$ это доказано так, что проверяется без доверия к нашей программе (<a href="verify.html">проверяемость</a>). Почти все лишние классы снимают $d_5$, сохраняющие цвет, но не все разрешённые (<a href="differentials.html">дифференциалы</a>).</li>
+<li><b>Правило не определяет порядок поедания</b>, когда класс может быть и целью, и источником; от этого зависит, например, $\pi_{71}$ (<a href="differentials.html">дифференциалы</a>).</li>
+</ol>
+<h2>Источники</h2>
+<ul>
+<li>Р. В. Михайлов, лекция 1 курса «Цветные метабиблиотеки. Разум пространства», лаборатория им. П. Л. Чебышева СПбГУ, 02.09.2016: <a href="https://www.youtube.com/watch?v=yE49kR_RA7o">YouTube</a>.</li>
+<li>S. O. Ivanov, R. Mikhailov, J. Wu, <i>On nontriviality of homotopy groups of spheres</i>, <a href="https://arxiv.org/abs/1506.00952">arXiv:1506.00952</a> — лямбда-алгебра mod $p$.</li>
+<li>H. Toda, <i>Unstable 3-primary Homotopy Groups of Spheres</i>, Econoinformatics 29 (2003) — <a href="https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Toda03-ocr.pdf">скан</a>; H. Toda, <i>Composition Methods in Homotopy Groups of Spheres</i>, 1962.</li>
+<li>Проект sseq, программа ext: <a href="https://github.com/JoeyBF/sseq">github.com/JoeyBF/sseq</a> — независимое вычисление нестабильного Ext.</li>
+</ul>
+</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
+(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/ru/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</body></html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заметки об источниках — Цветная метабиблиотека: пересчёт</title>
+<link rel="alternate" hreflang="en" href="https://ispacex.github.io/metalibrary/notes.html">
+<link rel="alternate" hreflang="ru" href="https://ispacex.github.io/metalibrary/ru/notes.html">
+<link rel="alternate" hreflang="x-default" href="https://ispacex.github.io/metalibrary/notes.html">
+<style>
+:root { --ink:#1f2933; --muted:#52606d; --line:#d9dee5; --bg:#ffffff; --soft:#f4f6f9;
+        --bad:#fde8e4; --badink:#a33a1f; --ok:#e7f4ea; --amb:#fff3d6; --acc:#2e6db4; }
+@media (prefers-color-scheme: dark) { :root { --ink:#e6e9ee; --muted:#a3adb9; --line:#38414c;
+        --bg:#14181d; --soft:#1c2128; --bad:#4a2620; --badink:#ffb4a2; --ok:#1f3a27; --amb:#4a3d1c; --acc:#7fb0ec; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif; }
+header { border-bottom:1px solid var(--line); background:var(--soft); }
+header .wrap { padding-top:.7rem; padding-bottom:.8rem; }
+header .top { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.6rem; }
+header .title { font-weight:600; color:var(--ink); text-decoration:none; }
+header .tools { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.lang { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:.85rem; line-height:1.6; }
+.lang a, .lang strong { padding:0 .6em; text-decoration:none; }
+.lang a { color:var(--acc); background:var(--bg); }
+.lang strong { background:var(--acc); color:var(--bg); }
+.lang > * + * { border-left:1px solid var(--line); }
+nav { display:flex; flex-wrap:wrap; gap:.4rem; }
+nav a { color:var(--acc); text-decoration:none; white-space:nowrap; font-size:.92rem; line-height:1.5;
+        padding:.15em .65em; border:1px solid var(--line); border-radius:6px; background:var(--bg); }
+nav a:hover, nav a:focus-visible { border-color:var(--acc); }
+nav a.cur { background:var(--acc); border-color:var(--acc); color:var(--bg); font-weight:600; }
+@media (max-width:520px) { nav { gap:.3rem; } nav a { font-size:.85rem; padding:.1em .5em; } }
+.wrap { max-width:1100px; margin:0 auto; padding:.9rem 16px; }
+h1 { font-size:1.6rem; margin:.6rem 0 .8rem; } h2 { font-size:1.25rem; margin-top:2rem; }
+a { color:var(--acc); } .muted { color:var(--muted); } small { color:var(--muted); }
+.tw { overflow-x:auto; margin:1rem 0; border:1px solid var(--line); border-radius:6px; }
+table { border-collapse:collapse; width:100%; font-size:.9rem; font-variant-numeric:tabular-nums; }
+th, td { border-bottom:1px solid var(--line); padding:.3rem .55rem; text-align:center; vertical-align:top; }
+th { background:var(--soft); position:sticky; top:0; }
+td.l, th.l { text-align:left; }
+tr.bad td { background:var(--bad); } td.bad { background:var(--bad); color:var(--badink); font-weight:600; }
+td.amb { background:var(--amb); } td.ok { background:var(--ok); }
+.box { border-left:4px solid var(--acc); background:var(--soft); padding:.7rem 1rem; margin:1rem 0; border-radius:0 6px 6px 0; }
+img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; }
+code { background:var(--soft); padding:0 .25em; border-radius:3px; }
+footer { border-top:1px solid var(--line); margin-top:3rem; }
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script></head>
+<body><header><div class="wrap"><div class="top"><a class="title" href="index.html">Цветная метабиблиотека: пересчёт</a>
+<div class="tools"><span class="pal"></span><span class="lang" role="group" aria-label="Язык"><a href="../notes.html" hreflang="en" lang="en">EN</a><strong lang="ru" aria-current="true">RU</strong></span></div></div>
+<nav aria-label="Разделы"><a href="index.html">Сводка</a><a href="comparison.html">Сравнение по n</a><a href="e2.html">Классы E²</a><a href="differentials.html">Дифференциалы</a><a href="toda2003.html">Таблица Тоды 2003</a><a href="method.html">Метод и проверки</a><a href="verify.html">Проверяемость</a><a href="data.html">Данные</a><a href="notes.html" class=cur aria-current=page>Заметки об источниках</a><a href="search.html">Поиск</a></nav></div></header>
+<main class="wrap"><h1>Заметки об источниках</h1>
+
+<p>Здесь — то, что мы заметили в чужих таблицах и программах, пока сверяли с ними свои данные.
+<b>В отличие от остальных страниц, речь идёт о 2-примарной части</b> гомотопических групп сфер.</p>
+
+<h2>Пакет Н. Стрикленда для Mathematica (Toda.m)</h2>
+<p>N. Strickland, пакет о нестабильных гомотопических группах сфер до 19-го стема:
+<a href="https://strickland1.org/toda/">strickland1.org/toda</a> (файлы <code>Toda.m</code>, <code>LambdaAlgebra.m</code>,
+<code>LambdaData.m</code>, <code>TodaChecks.m</code>). Данные в основном из книги Тоды <i>Composition Methods in Homotopy Groups
+of Spheres</i> (1962). Пакет хранит группы $\pi_{n+k}(S^n)$ по модулю нечётного кручения, образующие, порядки и 962 соотношения
+между композициями, надстройкой $E$, инвариантом Хопфа $H$ и умножением Уайтхеда $P$. Его лямбда-алгебра — только mod 2.</p>
+<p>Mathematica у нас нет, поэтому данные пакета мы прочитали собственной программой и прогнали проверки согласованности:
+перенос проверок автора (<code>TodaChecks.m</code>) и свои — на степени, порядки и лямбда-представителей. Независимая mod-2
+лямбда-алгебра полностью совпала с <code>LambdaData.m</code>. Остальное нашлось как ошибки в данных:</p>
+<ol>
+<li><code>Toda.m</code>, строка 1623: правило <code>Sigma[Sigma[sigmasecond]] -&gt; 2 Sigma[sigma[8]]</code> приравнивает элементы разных групп,
+$\pi_{15}(S^8)$ и $\pi_{16}(S^9)$; правило при этом срабатывает.</li>
+<li>Строка 2126: <code>o[Sigma[sigmaprime],eta[15],epsilon[16]] -&gt; Sigma[zetaprime]</code> — справа должно быть $\Sigma^2\zeta'$.
+Это единственное нарушение $E\circ P=0$, которое находят проверки.</li>
+<li>Строки 1947–1960: опечатка в имени функции (<code>AddRelations</code>), из-за неё три соотношения не добавляются.</li>
+<li>Строка 1144: <code>AddOrderRule</code> вызван с четырьмя аргументами вместо пяти, поэтому элемент $w_n$ при нечётном $n$ не получает порядок 2.</li>
+<li>Строка 1450: <code>SetOrder[o[nu[6],kappa[9]],4,"Toda, Theorem 12.7"]</code> — порядок $\nu_6\circ\kappa_9$ равен 2, а не 4
+(см. ниже). Из-за этого пакет даёт $\pi_{23}(S^6)\cong\mathbb Z_4\oplus(\mathbb Z_2)^3$ вместо $(\mathbb Z_2)^4$.</li>
+<li>Строка 1563: <code>SetOrder[o[omega[17],nu[32]],2,...]</code> — опечатка, должно быть <code>nu[33]</code>; порядок
+$\omega_{17}\circ\nu_{33}$ поэтому не задан, и в $\pi_{36}(S^{17})$ появляется лишнее слагаемое $\mathbb Z$.</li>
+<li>Не задан порядок $\nu_7\circ\kappa_{10}$ (он равен 2: $\pi_{24}(S^7)\cong(\mathbb Z_2)^4$, Тода, теорема 12.7), отсюда
+лишнее $\mathbb Z$ в $\pi_{24}(S^7)$.</li>
+<li>Мелкие ошибки в примерах документации <code>toda.pdf</code>.</li>
+</ol>
+<p>Помимо этого, проверки показывают пробелы — образы $E$, $H$, $P$ в 33, 14 и 29 группах не сводятся к образующим.
+Автор сам предупреждает о такой неполноте на странице пакета, противоречий за ней не найдено.</p>
+
+<h2>$\pi_{23}(S^6)\cong(\mathbb Z_2)^4$: порядок $\nu_6\kappa_9$ равен 2</h2>
+<p>Сверка групп пакета с таблицей Тоды в перепечатке Равенела (<i>Complex Cobordism</i>, 3-е изд., табл. A3.4, с. 390) дала 377
+совпадений из 380 клеток ($2\le n\le21$, $k\le19$). Все три расхождения — ошибки пакета (пп. 5–7 выше). Про $\pi_{23}(S^6)$:</p>
+<ul>
+<li>таблица Тоды у Равенела и копия в <a href="https://math.pku.edu.cn/teachers/zhaoxa/_web_resource/_math_table/sphere_homotopy.htm">таблице PKU</a>: $(\mathbb Z_2)^4$ (обе — перепечатки книги Тоды);</li>
+<li>Miyauchi, Mukai, Ohara, <a href="https://arxiv.org/abs/1705.00273">arXiv:1705.00273</a>, §3, берут продолжение $\nu_6\kappa_9$ на пространство Мура $M^{24}$ — оно существует только при $2\nu_6\kappa_9=0$;</li>
+<li><a href="https://arxiv.org/abs/2107.00154">arXiv:2107.00154</a>, доказательство предл. 3.4: $\{P(E\theta)+\nu_6\kappa_9,\ \eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^2$; так как $P(E\theta)$ порядка 2 (это есть и в самом пакете, строка 1438), $2\nu_6\kappa_9=0$;</li>
+<li>то же из соотношений: $2\kappa_7=\bar\nu_7\nu_{15}^2$ и $\nu_6\bar\nu_9=P(\nu_{13}^2)$ дают $2\nu_6\kappa_9=P(\nu_{13}^4)=0$, так как $\pi^s_{12}=0$ (наш вывод).</li>
+</ul>
+<p>Прямо это сказано у Y. Hirato, H. Kachi, J. Mukai, <i>21-st and 22-nd homotopy groups of the n-th rotation group</i>,
+J. Fac. Sci. Shinshu Univ. 41 (2006), с. 12 (<a href="https://soar-ir.repo.nii.ac.jp/records/12005">открытый доступ</a>):
+$\pi^6_{23}=\{P(\Sigma\theta),\nu_6\kappa_9,\bar\mu_6,\eta_6\mu_7\sigma_{16}\}\cong(\mathbb Z_2)^4$. Порядок 4 есть у соседнего
+$\nu_5\kappa_8$ (там же, с. 11: $2\nu_5\kappa_8\ne0$), видимо, отсюда и ошибка. Текст самой теоремы 12.7 книги Тоды в открытом
+доступе мы не нашли.</p>
+
+</main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
+(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.</small></div></footer>
+<script src="/sitesearch/palette.js" data-index="/metalibrary/nav-index.json" data-mount="header .pal" data-search="/metalibrary/ru/search.html" data-search-index="/metalibrary/search-index.json" data-placeholder="Куда идём? например: хищное правило, Тода, метод" defer></script>
+</body></html>
