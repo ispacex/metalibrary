@@ -67,6 +67,11 @@ tr.bad td { background:var(--bad); } td.bad { background:var(--bad); color:var(-
 td.amb { background:var(--amb); } td.ok { background:var(--ok); }
 .box { border-left:4px solid var(--acc); background:var(--soft); padding:.7rem 1rem; margin:1rem 0; border-radius:0 6px 6px 0; }
 img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:#fff; padding:var(--imgpad); }
+/* a picture drawn twice (plot_e2.py): .lt on white, .dk on the dark theme's background, shown with the theme */
+img.dk { display:none; background:var(--bg); padding:0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) img.lt { display:none; }
+                                      :root:not([data-theme="light"]) img.dk { display:inline; } }
+:root[data-theme="dark"] img.lt { display:none; } :root[data-theme="dark"] img.dk { display:inline; }
 code { background:var(--soft); padding:0 .25em; border-radius:3px; }
 footer { border-top:1px solid var(--line); margin-top:3rem; }
 </style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
