@@ -74,6 +74,20 @@ img.dk { display:none; background:var(--bg); padding:0; }
 :root[data-theme="dark"] img.lt { display:none; } :root[data-theme="dark"] img.dk { display:inline; }
 code { background:var(--soft); padding:0 .25em; border-radius:3px; }
 footer { border-top:1px solid var(--line); margin-top:3rem; }
+
+table.gr { width:auto; font-size:.85rem; }
+table.ch { table-layout:fixed; font-size:.85rem; }
+table.ch col.k { width:4.5em; } table.ch col.o { width:2em; } table.ch col.e { width:1.6em; }
+table.ch col.t { width:10em; } table.ch col.n { width:12em; }
+table.ch td, table.ch th { border:0; padding:0; white-space:nowrap; vertical-align:middle; overflow:visible; }
+table.ch td.e { color:var(--muted); } table.ch .s { font-size:.9em; line-height:1; }
+table.ch tr.first td { padding-top:.45rem; } table.ch tr.u td, table.ch tr.l td { font-size:.8rem; }
+table.ch .ar { color:var(--muted); font-size:.8em; }
+table.gr td, table.gr th { padding:.1rem .3rem; white-space:nowrap; }
+table.tr td { border:0; text-align:left; padding:.05rem .5rem; }
+p.pg { color:var(--muted); font-size:.85rem; margin:1.2rem 0 .2rem; }
+.sic { color:var(--badink); font-size:.8em; margin-left:.2em; }
+p.c { text-align:center; }
 </style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
@@ -112,7 +126,7 @@ A word is admissible if the index following $\lambda_i$ is $\le 3i-1$ and the in
 <li>Toda 2003 $\le E_2$ for all $n\le82$.</li></ul>
 <p class="muted">The code is open: <a href="https://github.com/ispacex/meta-rapacious">ispacex/meta-rapacious</a>.</p>
 </main><footer><div class="wrap"><small>A recomputation for R. Mikhailov's lecture “Coloured metalibraries. The mind of space”
-(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$.<br>
+(2 September 2016). Data as of 15 October 2026. All numbers on these pages are 3-primary: the rank of the 3-torsion, all summands $\mathbb Z/3$ (in Toda's 2003 tables for the spheres $S^n$, $n\ge5$, the orders of the summands).<br>
 Part of <a href="https://ispacex.github.io/math/">Mathematics</a> at ispacex.github.io.</small></div></footer>
 <script>(function(){var d=document.documentElement,K='metalibrary-theme',
 b=document.querySelectorAll('.theme button');

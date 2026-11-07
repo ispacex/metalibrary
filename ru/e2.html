@@ -74,6 +74,20 @@ img.dk { display:none; background:var(--bg); padding:0; }
 :root[data-theme="dark"] img.lt { display:none; } :root[data-theme="dark"] img.dk { display:inline; }
 code { background:var(--soft); padding:0 .25em; border-radius:3px; }
 footer { border-top:1px solid var(--line); margin-top:3rem; }
+
+table.gr { width:auto; font-size:.85rem; }
+table.ch { table-layout:fixed; font-size:.85rem; }
+table.ch col.k { width:4.5em; } table.ch col.o { width:2em; } table.ch col.e { width:1.6em; }
+table.ch col.t { width:10em; } table.ch col.n { width:12em; }
+table.ch td, table.ch th { border:0; padding:0; white-space:nowrap; vertical-align:middle; overflow:visible; }
+table.ch td.e { color:var(--muted); } table.ch .s { font-size:.9em; line-height:1; }
+table.ch tr.first td { padding-top:.45rem; } table.ch tr.u td, table.ch tr.l td { font-size:.8rem; }
+table.ch .ar { color:var(--muted); font-size:.8em; }
+table.gr td, table.gr th { padding:.1rem .3rem; white-space:nowrap; }
+table.tr td { border:0; text-align:left; padding:.05rem .5rem; }
+p.pg { color:var(--muted); font-size:.85rem; margin:1.2rem 0 .2rem; }
+.sic { color:var(--badink); font-size:.8em; margin-left:.2em; }
+p.c { text-align:center; }
 </style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
@@ -92,7 +106,7 @@ footer { border-top:1px solid var(--line); margin-top:3rem; }
 <p>Данные: <a href="../data/e2_coloured.csv">e2_coloured.csv</a> ($E^2$ по $(n,s,\text{цвет})$, $n\le150$);
 <a href="../data/e2_metalib.csv">e2_metalib.csv</a> (прямой перебор: число слов, ранг дифференциала, гомологии по блокам, $n\le64$).</p>
 </main><footer><div class="wrap"><small>Пересчёт к лекции Р. В. Михайлова «Цветные метабиблиотеки. Разум пространства»
-(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$.<br>
+(02.09.2016). Данные от 15.10.2026. Все числа на этих страницах — 3-примарные: ранг 3-кручения, все слагаемые $\mathbb Z/3$ (в таблицах Тоды 2003 года для сфер $S^n$, $n\ge5$, — порядки слагаемых).<br>
 Раздел <a href="https://ispacex.github.io/ru/math/">«Математика»</a> на ispacex.github.io.</small></div></footer>
 <script>(function(){var d=document.documentElement,K='metalibrary-theme',
 b=document.querySelectorAll('.theme button');
